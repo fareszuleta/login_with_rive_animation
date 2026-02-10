@@ -10,15 +10,56 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  //control para mostrar/ocultar la contraseña
+  bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+    //para obtener el tamaño de la pantalla
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: RiveAnimation.asset('login_animation.riv')),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.20),
+          child: Column(
+            children: [
+              SizedBox(
+                width: size.width,
+                height: 200,
+                child: RiveAnimation.asset('login_animation.riv')),
+                const SizedBox(height: 10), //para separacion
+                TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hintText: 'Username',
+                    prefixIcon: const Icon(Icons.email),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)
+                    )
+                  ),
+                ),
+                const SizedBox(height: 10), //para separacion
+                TextField(
+                  obscureText: _obscureText,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    prefixIcon: const Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)
+                    )
+                  ),
+                )
+            ],
+          ),
         ),
       )
     );
