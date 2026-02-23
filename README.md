@@ -13,6 +13,8 @@ This application showcases the following functionalities:
 - 📐 **Responsive Design**: Adapts to different screen sizes using MediaQuery
 - 🎨 **Modern UI**: Clean and modern interface with rounded corners and iconography
 
+![Image](https://github.com/user-attachments/assets/2f117059-edb0-4e0b-834f-649875d9faf0)
+
 ## 🎬 What is Rive and State Machine?
 
 ### Rive
