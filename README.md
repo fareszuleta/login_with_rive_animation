@@ -13,6 +13,7 @@ This application showcases the following functionalities:
 - 📐 **Responsive Design**: Adapts to different screen sizes using MediaQuery
 - 🎨 **Modern UI**: Clean and modern interface with rounded corners and iconography
 
+
 ## 🎬 What is Rive and State Machine?
 
 ### Rive
@@ -68,10 +69,8 @@ assets/
 
 ## 🎥 Demo
 
-<!-- Add your GIF demo here -->
-![Login Animation Demo](demo.gif)
 
-> **Note**: Add a GIF demonstrating the complete functionality of the login screen with the Rive animation in action.
+![Image](https://github.com/user-attachments/assets/2f117059-edb0-4e0b-834f-649875d9faf0)
 
 ## 🎓 Academic Information
 
