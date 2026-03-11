@@ -108,10 +108,6 @@ flutter pub get
 flutter run
 ```
 
-## 🙏 Credits
-
-- Rive animation: *(add author / link here)*
-
 ## 📄 License
 
 This project is created for educational purposes.
