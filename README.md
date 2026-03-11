@@ -1,90 +1,78 @@
 # 🎨 Login with Rive Animation
 
-A beautiful Flutter login screen featuring interactive Rive animations that bring your authentication UI to life! ✨
+A beautiful Flutter login screen featuring interactive **Rive** animations that bring your authentication UI to life.
 
 ## 📱 Features
 
 This application showcases the following functionalities:
 
-- 🎭 **Interactive Rive Animation**: Engaging character animation that responds to user interactions
-- 👤 **Username Input Field**: Email/username text field with email icon
-- 🔐 **Password Input Field**: Secure password entry with lock icon
-- 👁️ **Password Visibility Toggle**: Show/hide password functionality for better user experience
-- 📐 **Responsive Design**: Adapts to different screen sizes using MediaQuery
-- 🎨 **Modern UI**: Clean and modern interface with rounded corners and iconography
+- 🎭 **Interactive Rive Animation**: Character reacts to user actions using a Rive **State Machine**
+- 👤 **Email / Username Input**: Text field with email icon
+- 🔐 **Password Input**: Secure password field with lock icon
+- 👁️ **Password Visibility Toggle**: Show/hide password
+- ✅❌ **Login Success/Fail Feedback**: Fires `trigSuccess` / `trigFail` based on validation
+- 🧠 **Look Tracking While Typing**: `numLook` changes with email length (debounced to neutral after typing)
+- 🙈 **Hands Up on Password Focus**: `isHandsUp` toggles when typing password
+- ⚠️ **Inline Validation Errors**: `errorText` shown for invalid email/password
+- 📜 **Scrollable Layout**: Wrapped with `SingleChildScrollView` to avoid overflow on small screens
+- 🎨 **Modern UI Extras**: “Forgot password?” and “Sign up” actions + styled login button
+- 📐 **Responsive Design**: Uses `MediaQuery`
+- 🧹 **Clean App UI**: `debugShowCheckedModeBanner: false`
 
+## 🆕 Latest Updates (2026-03-10)
 
-## 🎬 What is Rive and State Machine?
+From commit `feat(login): add success/fail triggers with email and password regex validation`:
+
+- Added **TextEditingControllers** for email and password
+- Added **regex validation**:
+  - Email: basic `name@domain.tld` validation
+  - Password: minimum 8 chars with uppercase, lowercase, digit, and special character
+- Added `_onLogin()` handler that:
+  - updates UI errors (`emailError`, `passError`)
+  - hides the keyboard and resets animation states
+  - fires success/fail triggers based on validation result
+- Added UI elements: **Login** button, **Forgot password?**, and **Sign up** row
+
+## 🎬 What is Rive and a State Machine?
 
 ### Rive
-**Rive** is a powerful real-time interactive design and animation tool that allows designers and developers to create stunning vector animations. Unlike traditional animation formats, Rive animations are:
+
+**Rive** is a real-time interactive design and animation tool for creating vector animations that are:
+
 - 🎯 Interactive and responsive to user input
 - 📦 Lightweight with small file sizes
-- 🔄 Runtime-controllable through State Machines
+- 🔄 Runtime-controllable through **State Machines**
 - 🌐 Cross-platform compatible
 
 ### State Machine
-A **State Machine** in Rive is a system that manages different animation states and transitions between them. It allows animations to:
-- 🔀 Transition smoothly between different states (idle, success, fail, etc.)
-- 🎮 Respond to user inputs and application events
-- 🧩 Create complex interactive behaviors without writing complex animation code
-- ⚡ Trigger specific animations based on conditions (like login success or error)
+
+A **State Machine** in Rive manages animation states and transitions. In this project it is used to:
+
+- 🔀 Transition between states such as idle, success, and fail
+- 🎮 Respond to text input and focus events (checking, hands up)
+- ⚡ Trigger specific animations based on login validation
 
 ## 🛠️ Technologies
 
 This project is built with:
 
-- **Flutter** `^3.10.7` - Google's UI toolkit for building natively compiled applications
-- **Dart** - Programming language optimized for building mobile, desktop, and web applications
-- **Rive** `^0.13.20` - For creating and displaying interactive animations
-- **Material Design** - Google's design system for creating beautiful UIs
+- **Flutter** `^3.10.7`
+- **Dart**
+- **Rive** `^0.13.20`
+- **Material Design**
 
 ## 📁 Project Structure
 
-### Main Library Files
-
-```
+```text
 lib/
-├── main.dart                    # App entry point and MaterialApp configuration
+├── main.dart                    # App entry point / MaterialApp configuration
 └── screens/
-    └── login_screen.dart        # Login screen with Rive animation and input fields
-```
-
-### Key Files Description
-
-- **`main.dart`**: Contains the `MyApp` widget which initializes the MaterialApp with theme configuration and sets `LoginScreen` as the home page.
-
-- **`login_screen.dart`**: Implements the login UI with:
-  - Rive animation integration
-  - Username text field
-  - Password text field with visibility toggle
-  - Responsive layout using SafeArea and MediaQuery
-
-### Assets
-
-```
-assets/
-└── login_animation.riv          # Rive animation file for the login character
+    └── login_screen.dart        # Login screen with Rive animation and form UI
 ```
 
 ## 🎥 Demo
 
-
 ![Image](https://github.com/user-attachments/assets/2f117059-edb0-4e0b-834f-649875d9faf0)
-
-## 🎓 Academic Information
-
-**Course**: [Your Course Name Here - e.g., Computer Graphics / Graficación]  
-**Professor**: [Professor Name Here]  
-**Institution**: [Your Institution Name]
-
-## 🙏 Credits
-
-Animation created by: [Animation Creator Name/Link Here]
-
-<!-- Example:
-Animation created by: [JcToon](https://rive.app/community/files/animation-link)
--->
 
 ## 🚀 Getting Started
 
@@ -97,24 +85,32 @@ Animation created by: [JcToon](https://rive.app/community/files/animation-link)
 ### Installation
 
 1. Clone this repository
+
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/fareszuleta/login_with_rive_animation.git
 ```
 
 2. Navigate to the project directory
+
 ```bash
 cd login_with_rive_animation
 ```
 
 3. Install dependencies
+
 ```bash
 flutter pub get
 ```
 
 4. Run the application
+
 ```bash
 flutter run
 ```
+
+## 🙏 Credits
+
+- Rive animation: *(add author / link here)*
 
 ## 📄 License
 
@@ -122,4 +118,4 @@ This project is created for educational purposes.
 
 ---
 
-Made with ❤️ using Flutter and Rive
+Made with Flutter and Rive
